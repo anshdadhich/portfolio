@@ -1,0 +1,226 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    position:sticky;
+    display: flex;
+    height: 25%;
+    flex-direction: column;
+    padding-top:1.5%;
+    justify-content: center;
+    background-color: rgb(255, 224, 50);
+}
+
+.headings{
+  display: flex;
+  padding-bottom:1.5%;
+  padding-right:3.5%;
+  justify-content: center;
+}
+
+.about_links{
+    padding-left:3%;
+    color:black;
+    text-decoration: none;
+    font-family: 'Code New Roman', sans-serif;
+    font-weight: 800;
+    font-size: large;
+}
+
+.line{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height:0.1rem;
+    width: 90%;
+    margin-left: 4%;
+}
+
+.linee{
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height:0.1rem;
+    width: 90vw;
+}
+
+#about{
+    background-color:white;
+    height: 17rem;
+    width: 70vw;
+}
+
+.about_section{
+    display: flex;
+    flex-direction: row;
+    align-items:end;
+    padding-left: 5%;
+    padding-top:4rem;
+}
+
+h1,h2,h3,h4{
+    color:black;
+    font-family: 'Code New Roman', sans-serif;
+}
+
+#profile_photo{
+    border-radius:2rem;
+    margin-left:1rem;
+    height:25%;
+    width:90%;
+}
+
+#skills{
+   display:flex;
+   flex-direction: row;
+   flex-wrap:nowrap;
+}
+
+.skills{
+    display: flex;
+    padding:1rem 3rem 1rem 3rem;
+    background-color: rgb(255, 224, 50);
+    border: 10px solid white;
+    border-style: double;
+    border-radius: 1.5rem;
+    color: rgb(0, 0, 0);
+    font-family: 'Code New Roman', sans-serif;
+}
+
+.skill_heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.yellow_line1{
+    width: 100vw;
+    height: 0.8rem;
+    margin-top: 2rem;
+    background-color: rgb(255, 224, 50);
+}
+
+.yellow_line2{
+    width: 100vw;
+    height: 0.5rem;
+    margin-top: 1rem;
+    background-color: rgb(255, 224, 50);
+}
+
+.yellow_line3{
+    width: 100vw;
+    height: 0.4rem;
+    margin-top: 1rem;
+    background-color: rgb(255, 224, 50);
+}
+
+.yellow_line4{
+    width: 100vw;
+    height: 0.2rem;
+    margin-top: 1rem;
+    background-color: rgb(255, 224, 50);
+}
+
+.yellow_line5{
+    width: 100vw;
+    height: 0.1rem;
+    margin-top: 1rem;
+    background-color: rgb(255, 224, 50);
+}
+
+.skill_section{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+.link{
+    color:black;
+    text-decoration: none;
+    font-family: 'Code New Roman', sans-serif;
+    font-weight: 800;
+    font-size: small;
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.linkk{
+    display: inline-block;
+    color:black;
+    text-decoration: none;
+    font-family: 'Code New Roman', sans-serif;
+    font-weight: 800;
+    font-size: small;
+}
+
+.projects{
+    padding-top: 3rem;
+}
+
+
+
+@media (max-width:826px){
+    .about_section{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items:center;
+        padding-top:1rem;
+    }
+    
+    a{
+        padding-left:5%;
+        color:black;
+        text-decoration: none;
+        font-family: 'Code New Roman', sans-serif;
+        font-weight: 600;
+        font-size: small;
+    }
+
+    #profile_photo{
+        border-radius:2rem;
+        margin-left:1rem;
+        height:25%;
+        width:90%;
+        margin-top:-2rem;
+    }
+}
+
+.contacts{
+    color: white;
+    font-size: 1.7rem;
+    font-family: 'Code New Roman', sans-serif; 
+    font-weight: 600;
+}
+
+@media (max-width:528px){
+    #profile_photo{
+        border-radius:2rem;
+        height:25%;
+        width:90%;
+        margin-top:3rem;
+    }
+
+    .about_links{
+        padding-left:3%;
+        color:black;
+        text-decoration: none;
+        font-family: 'Code New Roman', sans-serif;
+        font-weight: 600;
+        font-size:medium;
+    }
+
+    .contacts{
+        color: white;
+        font-size: 1.4rem;
+        font-family: 'Code New Roman', sans-serif; 
+        font-weight: 600;
+    }
+}
