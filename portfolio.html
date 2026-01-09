@@ -1,116 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "stylesheet" href = "portfolio.css">
-    <link href="https://fonts.cdnfonts.com/css/code-new-roman-2" rel="stylesheet">
-    <title>Ansh Dadhich</title>
+    <title>Ansh Dadhich | Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Inter:wght@400;500;600&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#e2e2d5',
+                        text: '#1a1a1a',
+                        accent: '#7fa05a',
+                        border: 'rgba(26, 26, 26, 0.4)',
+                    },
+                    fontFamily: {
+                        display: ['Big Shoulders Display', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        serif: ['Libre Franklin', 'serif'],
+                    },
+                    screens: {
+                        'md': '900px',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #e2e2d5;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+            position: relative;
+        }
+
+        body.loaded {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .list-bullet li {
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .list-bullet li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #7fa05a;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+                filter: blur(2px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        .animate-item {
+            opacity: 0;
+            animation: fadeInUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-0 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-5 {
+            animation-delay: 0.3s;
+        }
+    </style>
 </head>
-<body>
-    <div class = "navbar">
-         <div class = "headings">
-             <a class = "about_links" href = "#about">About</a>
-             <a class = "about_links" href = "#skills">Skills</a>
-             <a class = "about_links" href = "#projects">Projects</a>
-             <a class = "about_links" href = "#contact">Contact</a>
-         </div>
-         <span class = "line"></span>
-    </div>
 
-    <div class = "about_section">
-        <div id = "about">
-            <h1>Ansh Dadhich</h1>
-            <h2>I'm currently pursuing Btech</h2>
-            <h2>and I'm interested in Machine Learning, Deep Learning, Web Development</h2>
+<body class="text-text font-body min-h-screen overflow-x-hidden relative selection:bg-accent selection:text-white">
+
+    <script>
+        window.onload = function () {
+            document.body.classList.add('loaded');
+        };
+    </script>
+
+    <nav
+        class="animate-item delay-0 grid grid-cols-2 md:grid-cols-[1fr_100px_1fr] h-[60px] border-b border-text relative z-10 bg-bg">
+        <div class="flex items-center"></div>
+
+        <div class="hidden md:flex items-center justify-center"></div>
+
+        <div
+            class="flex items-center justify-end pr-[40px] gap-[25px] text-[0.7rem] font-bold uppercase tracking-[0.5px]">
+            <a href="mailto:anshdadhichmm@gmail.com"
+                class="hidden md:inline border-b border-transparent hover:border-text transition-colors duration-200">anshdadhichmm@gmail.com</a>
+            <a href="https://github.com/anshdadhich"
+                class="border-b border-transparent hover:border-text transition-colors duration-200">Github</a>
+            <a href="Ansh Dadhich resume (3).pdf" download="Ansh Dadhich resume (3).pdf"
+                class="bg-accent text-white px-4 py-2 hover:bg-[#6a8a4a] transition-colors duration-200 no-underline inline-block">
+                Resume
+            </a>
         </div>
-        <div class="profile_photo"><img id = "profile_photo" src="profile_photo.jpg" alt = "Ansh Dadhich">
+    </nav>
+
+    <header class="text-center pt-[70px] pb-[50px] px-5 border-b border-text relative z-10">
+        <div class="animate-item delay-1">
+            <h1
+                class="font-display text-[15vw] md:text-[clamp(4rem,14vw,11rem)] leading-[0.8] uppercase mb-[25px] tracking-[-3px] text-[#111] font-bold">
+                Ansh Dadhich
+            </h1>
         </div>
-    </div>
+        <div
+            class="animate-item flex flex-col md:flex-row justify-center items-center gap-[5px] md:gap-[15px] text-[0.85rem] font-semibold uppercase opacity-80 tracking-[0.5px]">
+            <span>Jaipur</span>
+            <span class="hidden md:inline opacity-30">|</span>
+            <a href="mailto:anshdadhichmm@gmail.com">anshdadhichmm@gmail.com</a>
+            <span class="hidden md:inline opacity-30">|</span>
+            <span>+91 8233003097</span>
+            <span class="hidden md:inline opacity-30">|</span>
+            <a href="https://anshdadhich.github.io/portfolio">anshdadhich.github.io/portfolio</a>
+        </div>
+    </header>
 
-    <div>
-        <div class="yellow_line1"></div>
-        <div class="yellow_line2"></div>
-        <div class="yellow_line3"></div>
-        <div class="yellow_line4"></div>
-        <div class="yellow_line5"></div>
-    </div>
+    <section class="animate-item delay-3 max-w-[900px] mx-auto py-[50px] px-[30px] text-left relative z-10">
+        <p class="font-serif italic text-[1.35rem] leading-[1.6] text-[#2a2a2a]">
+            "A Computer Science student at JECRC University with proficiency in Python and project experience with
+            PyTorch. Familiar with Deep Learning. Eager to apply knowledge of AI and Large Language Models (LLMs) in
+            real-world projects and enhance expertise in Artificial Intelligence."
+        </p>
+    </section>
 
-    <div style = "padding-top:3rem" class = "skill_heading">
-        <span id = "skills"  class = "linee"></span>
-        <h2>Skills</h2>
-        <span class = "linee"></span>
-    </div>
+    <main
+        class="max-w-[1400px] mx-auto border border-dashed border-border grid grid-cols-1 md:grid-cols-[1.35fr_0.65fr] px-0 md:px-[40px] relative z-10">
 
-    <div class = skill_section>
-        <p class = "skills">python</p>
-        <p class = "skills">pytorch</p>
-        <p class = "skills">javascript</p>
-        <p class = "skills">Node.js</p>
-    </div>
+        <div class="animate-item delay-4 border-b md:border-b-0 md:border-r border-dashed border-border">
 
-    <div style = "padding-top:2rem" class = "skill_heading">
-        <span class = "linee"></span>
-        <h2>Projects</h2>
-        <span class = "linee"></span>
-    </div>
+            <div class="p-[40px] border-b border-dashed border-border">
+                <h2 class="font-display text-[2.2rem] uppercase tracking-[0.5px] mb-[35px] leading-none font-bold">
+                    Projects</h2>
 
-    <div id = "projects" class="projects">
-        <ul>
-            <li>
-                <h3>Satellite image to Map image</h3>
-                <h4>Made a model based on pix2pix architecture that is used for image translation task</h4>
-                <h4>this can also be trained and use for different image translation tasks &nbsp <a class = "link" href="https://github.com/anshdadhich/Satellite-to-Map-Image">(view on github)</a>
-                </h4>
-            </li>
-            <br>
-            <br>
-            <li>
-                <h3>Implementation of transformer architecture</h3>
-                <h4>Implemented transformer architecture and its components using pytorch &nbsp <a class = "link" href="https://github.com/anshdadhich/Transformer">(view on github)</a></h4>
-            </li>
-            <br>
-            <br>
-            <li>
-                <h3>Basic conversational model based on gpt2</h3>
-                <h4>Fine tuned gpt2 on a small publicly available conversational dataset &nbsp  <a class = "link" href="https://github.com/anshdadhich/conversation_model">(view on github)</a>
-                    <br>
-                    link to dataset -> <a class = "linkk" href = "https://www.kaggle.com/datasets/kreeshrajani/3k-conversations-dataset-for-chatbot"><h4 style="display: inline-block;">(link)</a>
-                </h4>
-            </li>
-             <li>
-                <h3>Pong</h3>
-                <h4>made a model that plays pong using policy gradients &nbsp  <a class = "link" href="https://github.com/anshdadhich/pong">(view on github)</a>
-                    <br>
-                </h4>
-            </li>
-            <li>
-                <h3>Web Scraper</h3>
-                <h4>A web based web scraper that helps in scraping data from websites &nbsp  <a class = "link" href="https://web-scraperr.streamlit.app/">(access it from here)</a></h4>
-                    <br>
-                </h4>
-            </li>
-        </ul>
-    </div>
+                <div class="flex flex-col gap-[45px]">
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-[10px] pb-[5px] border-b border-black/5">
+                            <a href="#"
+                                class="font-bold text-[1.2rem] flex items-center gap-2 group-hover:text-accent transition-colors">
+                                Satellite Image to Map Translation
+                                <svg class="w-[14px] h-[14px] stroke-current stroke-[1.5] fill-none"
+                                    viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </a>
+                            <span class="font-display text-[1.1rem] text-[#666] tracking-[0.5px]">2025</span>
+                        </div>
+                        <ul class="list-bullet text-[0.95rem] leading-[1.6] text-[#444] opacity-90 space-y-[6px]">
+                            <li>Created an image translation model that converts satellite images to map images.</li>
+                            <li>Based on Pix2Pix GAN architecture using U-Net based generator and CNN discriminator.
+                            </li>
+                            <li>Trained and validated on about 2000 images.</li>
+                        </ul>
+                    </div>
 
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-[10px] pb-[5px] border-b border-black/5">
+                            <a href="#"
+                                class="font-bold text-[1.2rem] flex items-center gap-2 group-hover:text-accent transition-colors">
+                                Transformer Architecture
+                                <svg class="w-[14px] h-[14px] stroke-current stroke-[1.5] fill-none"
+                                    viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </a>
+                            <span class="font-display text-[1.1rem] text-[#666] tracking-[0.5px]">2024</span>
+                        </div>
+                        <ul class="list-bullet text-[0.95rem] leading-[1.6] text-[#444] opacity-90 space-y-[6px]">
+                            <li>Implemented transformer architecture components including attention mechanism and
+                                positional encoding from scratch using PyTorch.</li>
+                            <li>Included both encoder and decoder parts.</li>
+                        </ul>
+                    </div>
 
-    
-    <br>
-    <br>
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-[10px] pb-[5px] border-b border-black/5">
+                            <a href="#"
+                                class="font-bold text-[1.2rem] flex items-center gap-2 group-hover:text-accent transition-colors">
+                                Attrition Risk Prediction
+                                <svg class="w-[14px] h-[14px] stroke-current stroke-[1.5] fill-none"
+                                    viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </a>
+                            <span class="font-display text-[1.1rem] text-[#666] tracking-[0.5px]">2025</span>
+                        </div>
+                        <ul class="list-bullet text-[0.95rem] leading-[1.6] text-[#444] opacity-90 space-y-[6px]">
+                            <li>Employee attrition prediction model to identify attrition risk.</li>
+                            <li>Trained using K-Nearest Neighbors on imbalanced dataset (90% accuracy).</li>
+                        </ul>
+                    </div>
 
-    <div style="background-color: rgba(0, 0, 0, 0.762); height: 40%; width: 100%;
-    display: flex; flex-direction: column;">
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-[10px] pb-[5px] border-b border-black/5">
+                            <a href="#"
+                                class="font-bold text-[1.2rem] flex items-center gap-2 group-hover:text-accent transition-colors">
+                                Chat with GitHub Files
+                                <svg class="w-[14px] h-[14px] stroke-current stroke-[1.5] fill-none"
+                                    viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </a>
+                            <span class="font-display text-[1.1rem] text-[#666] tracking-[0.5px]">2025</span>
+                        </div>
+                        <ul class="list-bullet text-[0.95rem] leading-[1.6] text-[#444] opacity-90 space-y-[6px]">
+                            <li>Chatbot for querying GitHub files via GitHub API using "code-chunker".</li>
+                            <li>Stores embeddings in Chroma DB and uses Google Gemini to answer user queries.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <div id = "contact" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around;">
-            <p class = "contacts" >Contact: 8233003097</p>
-            <p class = "contacts">mail: anshdadhichmm@gmail.com</p>
+            <div class="p-[40px] border-b border-dashed border-border">
+                <h2 class="font-display text-[2.2rem] uppercase tracking-[0.5px] mb-[35px] leading-none font-bold">Side
+                    Projects</h2>
+                <div class="flex flex-col gap-10">
+                    <div class="group">
+                        <div class="flex justify-between items-baseline mb-[10px] pb-[5px] border-b border-black/5">
+                            <a href="https://github.com/Zintl-e/NativePdf"
+                                class="font-bold text-[1.2rem] flex items-center gap-2 group-hover:text-accent transition-colors">
+                                Native PDF
+                                <svg class="w-[14px] h-[14px] stroke-current stroke-[1.5] fill-none"
+                                    viewBox="0 0 24 24">
+                                    <path d="M7 17L17 7M17 7H7M17 7V17" />
+                                </svg>
+                            </a>
+                            <span class="font-display text-[1.1rem] text-[#666] tracking-[0.5px]">2025</span>
+                        </div>
+                        <ul class="list-bullet text-[0.95rem] leading-[1.6] text-[#444] opacity-90 space-y-[6px]">
+                            <li>A Completely client-side PDF tool website that help you Merge, Split, Rotate, Sign,
+                                Edit, Add Watermark, Crop Pdfs and convert pdf to Image and .docx file </li>
+                            <li>ALl files are processed directly in the browser. No Uploads, No Data Ever Leaves the
+                                Device.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-[40px] md:border-b-0 border-b border-dashed border-border">
+                <h2 class="font-display text-[2.2rem] uppercase tracking-[0.5px] mb-[35px] leading-none font-bold">
+                    Volunteering</h2>
+                <div class="flex flex-col gap-[45px]">
+                    <div>
+                        <div class="flex justify-between items-baseline mb-2">
+                            <span class="font-bold text-[1.2rem]">JU Hacks</span>
+                            <span class="font-display text-[1.1rem] text-[#666] tracking-[0.5px]">2023</span>
+                        </div>
+                        <p class="text-[0.95rem] leading-[1.6] text-[#444] opacity-90">Hackathon Event Management at
+                            College.</p>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <span class="font-bold text-[1.2rem]">Communities</span>
+                        </div>
+                        <p class="text-[0.95rem] leading-[1.6] text-[#444] opacity-90 mt-[5px]">Active member of Coding
+                            Ninjas, Google Crowdsource.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-around">
-            <a style="color: white; font-size: 1.5rem; padding: 4%;" class = "link" href="">Linkedin</a>
-            <a style="color: white; font-size: 1.5rem; padding: 4%;" class = "link" href = "https://github.com/anshdadhich">Github</a>
-          
+        <div class="animate-item delay-5 flex flex-col">
+
+            <div class="p-[40px] border-b border-dashed border-border pt-[40px]">
+                <h2 class="font-display text-[2.2rem] uppercase tracking-[0.5px] mb-[35px] leading-none font-bold">
+                    Skills</h2>
+                <ul class="text-[0.95rem] leading-[2] list-none">
+                    <li class="border-b border-dashed border-black/10 pb-[2px] mb-[8px]">
+                        <strong class="font-bold uppercase text-[0.8rem] tracking-[0.5px] mr-[5px]">Languages:</strong>
+                        Python, Javascript
+                    </li>
+                    <li class="border-b border-dashed border-black/10 pb-[2px] mb-[8px]">
+                        <strong class="font-bold uppercase text-[0.8rem] tracking-[0.5px] mr-[5px]">Frameworks:</strong>
+                        PyTorch, NumPy, Pandas
+                    </li>
+                    <li class="border-b border-dashed border-black/10 pb-[2px] mb-[8px]">
+                        <strong class="font-bold uppercase text-[0.8rem] tracking-[0.5px] mr-[5px]">AI/Tools:</strong>
+                        Langchain, LangGraph, VS Code
+                    </li>
+                    <li class="border-b border-dashed border-black/10 pb-[2px] mb-[8px]">
+                        <strong class="font-bold uppercase text-[0.8rem] tracking-[0.5px] mr-[5px]">Web:</strong>
+                        Express.js
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-[40px] border-b border-dashed border-border">
+                <h2 class="font-display text-[2.2rem] uppercase tracking-[0.5px] mb-[35px] leading-none font-bold">
+                    Experience</h2>
+                <div>
+                    <div class="flex flex-col gap-[4px] mb-3">
+                        <span class="font-bold text-[1.2rem] flex items-center gap-2">WebXpress AI Intern</span>
+                        <span class="font-display text-[0.9rem] text-[#666] uppercase tracking-[0.5px]">Aug - Nov
+                            2025</span>
+                    </div>
+                    <p class="text-[0.9rem] leading-[1.6] text-[#444] opacity-90">
+                        Automated monitoring of delayed deliveries using n8n and LangGraph. Created interface for system
+                        interaction.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-[40px] flex-grow">
+                <h2 class="font-display text-[2.2rem] uppercase tracking-[0.5px] mb-[35px] leading-none font-bold">
+                    Education</h2>
+
+                <div class="mb-[25px]">
+                    <span class="font-bold text-[1rem] block">JECRC University</span>
+                    <span class="font-serif italic text-[0.85rem] text-[#555] block mt-[4px]">Btech (Computer
+                        Science)</span>
+                    <span class="font-serif italic text-[0.85rem] text-[#555] block mt-[4px]">2022 - Present</span>
+                </div>
+
+                <div class="mb-[25px]">
+                    <span class="font-bold text-[1rem] block">Central Academy</span>
+                    <span class="font-serif italic text-[0.85rem] text-[#555] block mt-[4px]">12th Board: 84.8%
+                        (2022)</span>
+                    <span class="font-serif italic text-[0.85rem] text-[#555] block mt-[4px]">10th Board: 86.83%
+                        (2020)</span>
+                </div>
+            </div>
         </div>
-    </div>
+    </main>
+
+    <footer
+        class="animate-item delay-5 border-text py-[60px] text-center relative z-10 max-w-[1400px] mx-auto bg-black/[0.02]">
+        <div class="flex justify-center gap-[30px] mb-[20px]">
+            <a href="https://github.com/anshdadhich" target="_blank"
+                class="text-text hover:text-accent hover:-translate-y-[3px] transition-all duration-200">
+                <svg class="w-[24px] h-[24px] fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+            </a>
+            <a href="#" class="text-text hover:text-accent hover:-translate-y-[3px] transition-all duration-200">
+                <svg class="w-[24px] h-[24px] fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+            </a>
+            <a href="#" class="text-text hover:text-accent hover:-translate-y-[3px] transition-all duration-200">
+                <svg class="w-[24px] h-[24px] fill-current" viewBox="0 0 24 24">
+                    <path
+                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+            </a>
+        </div>
+        <div class="font-display uppercase text-[1rem] tracking-[2px] opacity-60 font-bold">
+            © 2026 Ansh Dadhich
+        </div>
+    </footer>
 </body>
+
 </html>
